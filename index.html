@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Moin Tariq — AI/ML Engineer, Mathematician, AI Researcher." />
+  <meta name="description" content="Moin Tariq — AI engineer and applied mathematics researcher working across machine learning, geospatial modeling, and LLM systems." />
   <meta name="theme-color" content="#07070a" />
   <title>Moin Tariq | AI Engineer & Researcher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,7 @@
     }
     a { color: inherit; text-decoration: none; }
     button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible, .project-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
     ::selection { background: var(--accent); color: #fff; }
 
     .scroll-progress {
@@ -216,6 +217,9 @@
     .info-card .meta { color: var(--accent); font: 500 .7rem/1.5 "JetBrains Mono", monospace; margin-bottom: 11px; }
     .info-card p { color: var(--muted); line-height: 1.65; font-size: .86rem; }
     .info-card a { display: inline-block; margin-top: 13px; color: var(--accent); font-size: .8rem; }
+    .research-subhead { font-size: 1.05rem; margin: 38px 0 16px; }
+    .research-topics { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .research-topics .info-card h3 { line-height: 1.5; }
 
     .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
     .skill-group { border: 1px solid var(--border); background: var(--panel); border-radius: var(--radius); padding: 21px; }
@@ -294,14 +298,14 @@
       .nav-links a { padding: 14px 13px; border-radius: 8px; }
       .nav-links a:hover { background: rgba(255,255,255,.035); }
       .menu-btn { display: inline-flex; }
-      .skills-grid, .cert-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .skills-grid, .cert-grid, .research-topics { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .hero-stats { grid-template-columns: repeat(2, minmax(100px,1fr)); }
       .timeline-item { grid-template-columns: 1fr; gap: 10px; }
     }
     @media (max-width: 650px) {
       .section { padding-top: 72px; padding-bottom: 72px; }
       .hero { padding-top: 110px; }
-      .two-col, .skills-grid, .cert-grid { grid-template-columns: 1fr; }
+      .two-col, .skills-grid, .cert-grid, .research-topics { grid-template-columns: 1fr; }
       .card { flex-basis: 286px; }
       footer { flex-direction: column; }
     }
@@ -326,35 +330,36 @@
       <a href="#research">Research</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#certifications">Credentials</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
   </nav>
 
   <main id="top">
     <header class="hero">
       <div class="hero-inner">
-        <div class="eyebrow">AI · ML · Applied Mathematics</div>
+        <div class="eyebrow">AI Engineering · Machine Learning · Applied Mathematics</div>
         <h1>Moin <span>Tariq.</span></h1>
         <div class="typing-line">
-          <span class="typing-prefix">I build as</span>
+          <span class="typing-prefix">I work as</span>
           <span class="typing-text" id="typingText"></span><span class="caret"></span>
         </div>
         <p class="hero-copy">
-          Certified AI/ML engineer and applied mathematics researcher building production-ready machine learning systems,
+          AI engineer and applied mathematics researcher building machine learning systems,
           LLM/RAG applications, data pipelines, and decision-support products.
-          Currently based in Jinan, China.
+          Interdisciplinary research in Applied Mathematics, Data Science and Machine Learning. Based in Jinan, China.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">Explore my work <span>↘</span></a>
-          <a class="btn btn-ghost" href="https://docs.google.com/document/d/10fFNt4RpHl9aQAj0WiDGFU3KDPpLIoPw/edit?usp=drivesdk&ouid=104501928473596697214&rtpof=true&sd=true" target="_blank" rel="noopener">Download CV ↗</a>
+          <a class="btn btn-ghost" href="./Moin_Tariq_CV.pdf" download="Moin_Tariq_CV.pdf">Download CV ↗</a>
           <a class="btn btn-ghost" href="https://github.com/moin-t" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="btn btn-ghost" href="https://www.upwork.com/users/~018a5ee5f3128ff912" target="_blank" rel="noopener">Upwork Profile ↗</a>
         </div>
         <div class="hero-stats">
           <div class="stat"><b>30+</b><span>AI/ML freelance projects</span></div>
-          <div class="stat"><b>2</b><span>Research publications</span></div>
-          <div class="stat"><b>91/100</b><span>M.S. academic grade</span></div>
+          <div class="stat"><b>2</b><span>Published papers</span></div>
+          <div class="stat"><b>3.72/4.00</b><span>M.S. academic grade</span></div>
           <div class="stat"><b>IELTS 7.5</b><span>CEFR C1 English</span></div>
         </div>
       </div>
@@ -374,9 +379,9 @@
             <h3>Artificial Intelligence Engineer</h3>
             <div class="company">Upwork Inc. · Jinan, China</div>
             <ul>
-              <li>Delivered 30+ freelance AI/ML and data-science projects for clients across the U.S., Europe, and Asia.</li>
-              <li>Integrated LLMs, REST APIs, and automation pipelines into production-ready products, reducing manual workflow effort by 35%.</li>
-              <li>Built Python, SQL, FastAPI, statistical-modeling, and reporting workflows that cut turnaround time by 40% across 12+ client engagements.</li>
+              <li>As a top-rated professional, delivered 30+ freelance AI/ML and data science projects for clients across the U.S., Europe, and Asia.</li>
+              <li>Integrated LLMs, REST APIs, and automated pipelines into client products, reducing manual workflow effort by 35%.</li>
+              <li>Built Python, SQL, FastAPI, and statistical reporting workflows that cut turnaround time by 40% across 12+ client engagements.</li>
             </ul>
           </div>
         </article>
@@ -414,7 +419,7 @@
         <p class="section-intro">Full-stack analytics, agentic AI, local RAG, and geospatial machine learning.</p>
       </div>
       <div class="row-scroll">
-        <article class="card project-card reveal" tabindex="0" data-project="psx">
+        <article class="card project-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View PSX Market Intelligence Platform details" data-project="psx">
           <div class="visual"><div class="visual-code">PSX / AI AGENTS<br>FORECASTING + ANALYTICS</div></div>
           <div class="card-body">
             <div class="tag">Financial AI</div>
@@ -424,33 +429,33 @@
             <div class="card-action">View details <span>↗</span></div>
           </div>
         </article>
-        <article class="card project-card reveal" tabindex="0" data-project="roblox">
+        <article class="card project-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View AI-Powered Roblox Market Intelligence Platform details" data-project="roblox">
           <div class="visual"><div class="visual-code">GAME INTELLIGENCE<br>SCRAPING + GEMINI</div></div>
           <div class="card-body">
             <div class="tag">Gaming Intelligence</div>
-            <h3>AI-Powered Roblox Market Intelligence</h3>
+            <h3>AI-Powered Roblox Market Intelligence Platform</h3>
             <p>Gaming analytics platform tracking engagement, revenue estimates, breakout trends, and automated Gemini-powered reports.</p>
             <div class="card-meta">Python · SQL · Serverless APIs · Gemini</div>
             <div class="card-action">View details <span>↗</span></div>
           </div>
         </article>
-        <article class="card project-card reveal" tabindex="0" data-project="rag">
+        <article class="card project-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View Modular Local RAG-Based Document QA System details" data-project="rag">
           <div class="visual"><div class="visual-code">LOCAL RAG<br>PRIVATE DOCUMENT QA</div></div>
           <div class="card-body">
             <div class="tag">LLM / RAG</div>
-            <h3>Modular Local RAG Assistant</h3>
+            <h3>Modular Local RAG-Based Document QA System</h3>
             <p>Local document QA system using semantic chunking, local embeddings, vector search, and Ollama-hosted models.</p>
             <div class="card-meta">Streamlit · Ollama · ChromaDB · Embeddings</div>
             <div class="card-action">View details <span>↗</span></div>
           </div>
         </article>
-        <article class="card project-card reveal" tabindex="0" data-project="pygwml">
+        <article class="card project-card reveal" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View PyEGWML details" data-project="pygwml">
           <div class="visual"><div class="visual-code">PYPI PACKAGE<br>GEOGRAPHICALLY WEIGHTED ML</div></div>
           <div class="card-body">
             <div class="tag">Open Source</div>
             <h3>PyEGWML</h3>
-            <p>Open-source Python package for geographically weighted machine learning and geospatial data modeling.</p>
-            <div class="card-meta">Python · Geospatial ML · PyPI</div>
+            <p>Open-source Python package for explainable geographically weighted machine learning and geospatial data modeling.</p>
+            <div class="card-meta">Python · Machine Learning · PyPI</div>
             <div class="card-action">View details <span>↗</span></div>
           </div>
         </article>
@@ -460,32 +465,47 @@
     <section class="section alt" id="research">
       <div class="section-head reveal">
         <div class="section-kicker">03 / Research</div>
-        <h2>Research at the intersection of Artificial Intelligence & Applied Mathematics.</h2>
+        <h2>Research at the intersection of AI and applied mathematics.</h2>
       </div>
+      <h3 class="research-subhead reveal">Publications and submission</h3>
       <div class="two-col">
+        <article class="info-card reveal">
+          <div class="meta">IEEE CAIT 2026 · UNDER REVIEW</div>
+          <h3>EGWML: A Stability-Aware Explainable Geographically Weighted Machine Learning Framework for Spatially Varying Data</h3>
+          <p>With Muhammad Irfan Haider Khan, Maria Murad, and Saif Ur Rehman. Submitted to the IEEE 7th International Conference on Computers and Artificial Intelligence Technology.</p>
+        </article>
         <article class="info-card reveal">
           <div class="meta">IJBDMGW · 2025 · FIRST AUTHOR</div>
           <h3>Analysing Climate Shifts: Patterns of Temperature and Precipitation in Pakistan</h3>
           <p>Published in the International Journal of Big Data Mining for Global Warming.</p>
           <a href="https://doi.org/10.1142/S2630534824300033" target="_blank" rel="noopener">Open DOI ↗</a>
         </article>
-        <article class="info-card reveal">
+      </div>
+      <div class="two-col" style="margin-top:18px">
+        <article class="info-card reveal" style="grid-column:1/-1">
           <div class="meta">IJRESM · 2023</div>
           <h3>Mathematical Approach for Enhancing Audio Signal Quality: Theory, Insights, and Applications</h3>
           <p>Co-authored with Muhammad Irfan Haider Khan and published in the International Journal of Research in Engineering, Science and Management.</p>
           <a href="https://journal.ijresm.com/index.php/ijresm/article/view/2901" target="_blank" rel="noopener">Read publication ↗</a>
         </article>
       </div>
-      <div class="two-col" style="margin-top:18px">
+      <h3 class="research-subhead reveal">Ongoing research</h3>
+      <div class="research-topics">
         <article class="info-card reveal">
-          <div class="meta">M.S. THESIS · ONGOING</div>
-          <h3>Explainable Geographically Weighted ML-based Modelling of Ennvironmental and Urban dynamics</h3>
-          <p>Researching urban accessibility across socio-cultural and environmental contexts at Shandong University.</p>
+          <div class="meta">MACHINE LEARNING</div>
+          <h3>Beyond Prediction: Explainable Geographically Weighted Machine Learning Reveals the Drivers of Housing Prices in Islamabad, Pakistan</h3>
         </article>
         <article class="info-card reveal">
-          <div class="meta">B.S. FINAL YEAR PROJECT</div>
-          <h3>Exploration Strategies in Tabular Q-Learning using Python</h3>
-          <p>Undergraduate research project in reinforcement learning and exploration strategies.</p>
+          <div class="meta">GENERATIVE MODELS</div>
+          <h3>PA-cGAN: A Position-Aware Conditional Generative Adversarial Network for Cross-Position IMU Sensor Data Synthesis in Human Activity Recognition</h3>
+        </article>
+        <article class="info-card reveal">
+          <div class="meta">FINANCIAL FORECASTING</div>
+          <h3>An Adaptive Hybrid Deep Learning and Game-Theoretic Framework for Stock Market Forecasting and Decision-Making</h3>
+        </article>
+        <article class="info-card reveal">
+          <div class="meta">CLIMATE RESEARCH</div>
+          <h3>A Physics-Informed Integrated Drought Index (PIIDI) for the Transboundary Indus Basin under Climate Change and Anthropogenic Interventions</h3>
         </article>
       </div>
     </section>
@@ -499,12 +519,12 @@
         <article class="info-card reveal">
           <div class="meta">SEP 2024 — PRESENT · JINAN, CHINA</div>
           <h3>M.S. in Applied Mathematics</h3>
-          <p>Shandong University · Grade: 91/100. Thesis focuses on geographically weighted machine-learning models of urban accessibility.</p>
+          <p>Shandong University · GPA: 3.72/4.00. Thesis: An Explainable Geographically Weighted Machine Learning Framework for Climate and Urban Dynamics.</p>
         </article>
         <article class="info-card reveal">
           <div class="meta">FEB 2019 — FEB 2023 · ISLAMABAD, PAKISTAN</div>
           <h3>B.S. in Mathematics</h3>
-          <p>International Islamic University · GPA: 3.48/4.00. In Top 5% students of class.</p>
+          <p>International Islamic University · GPA: 3.48/4.00. Final year project: Exploration Strategies in Tabular Q-Learning using Python.</p>
         </article>
       </div>
     </section>
@@ -515,12 +535,12 @@
         <h2>Tools across the ML product lifecycle.</h2>
       </div>
       <div class="skills-grid">
-        <article class="skill-group reveal"><h3>Machine Learning</h3><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">scikit-learn</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">MLflow</span><span class="chip">Deep Learning</span><span class="chip">NLP</span></div></article>
+        <article class="skill-group reveal"><h3>Machine Learning</h3><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">scikit-learn</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">MLflow</span><span class="chip">Great Expectations</span><span class="chip">Scientific Python</span><span class="chip">Deep Learning</span><span class="chip">NLP</span></div></article>
         <article class="skill-group reveal"><h3>AI & LLM</h3><div class="chips"><span class="chip">OpenAI API</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Agentic AI</span><span class="chip">RAG</span><span class="chip">Prompt Engineering</span><span class="chip">Ollama</span><span class="chip">LLMOps</span></div></article>
         <article class="skill-group reveal"><h3>Reinforcement Learning</h3><div class="chips"><span class="chip">Gymnasium</span><span class="chip">DQN</span><span class="chip">PPO</span><span class="chip">DPO</span><span class="chip">GRPO</span><span class="chip">A3C</span><span class="chip">SARSA</span><span class="chip">RLHF</span></div></article>
         <article class="skill-group reveal"><h3>Backend</h3><div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">Airflow</span><span class="chip">CI/CD</span><span class="chip">Linux</span></div></article>
-        <article class="skill-group reveal"><h3>Data & Databases</h3><div class="chips"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">NoSQL</span><span class="chip">Supabase</span><span class="chip">Great Expectations</span></div></article>
-        <article class="skill-group reveal"><h3>Platforms</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">AWS Cloud</span><span class="chip">ArcGIS</span><span class="chip">Jupyter</span><span class="chip">Google Colab</span></div></article>
+        <article class="skill-group reveal"><h3>Data & Databases</h3><div class="chips"><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">NoSQL</span></div></article>
+        <article class="skill-group reveal"><h3>Platforms</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">AWS Cloud</span><span class="chip">ArcGIS</span><span class="chip">Jupyter Notebook</span><span class="chip">Google Colab</span></div></article>
       </div>
     </section>
 
@@ -537,7 +557,7 @@
       <div class="section-head reveal" style="margin-top:52px;margin-bottom:18px"><div class="section-kicker">Selected Honors</div></div>
       <div class="honors reveal">
         <div class="honor"><div class="year">2024</div><p>Chinese Scholarship Council (CSC) High-Level Graduate Research Scholarship Award, Shandong University.</p></div>
-        <div class="honor"><div class="year">2022</div><p>Grant to attend the International Conference on Mathematical Modeling and Scientific Computing for Industrial Research at ASSMS, Lahore.</p></div>
+        <div class="honor"><div class="year">2022</div><p>Grant to attend two days of the International Conference on Mathematical Modeling and Scientific Computing for Industrial Research at ASSMS, Lahore.</p></div>
         <div class="honor"><div class="year">2021</div><p>Participation award, Second International Workshop on Matrix Theory and Applications, AKFA University Uzbekistan.</p></div>
         <div class="honor"><div class="year">2020</div><p>Prime Minister of Pakistan Undergraduate Scholarship Award, International Islamic University Islamabad.</p></div>
       </div>
@@ -553,7 +573,7 @@
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/moin-t" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a class="btn btn-ghost" href="https://github.com/moin-t" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="btn btn-ghost" href="https://www.upwork.com/users/~018a5ee5f3128ff912" target="_blank" rel="noopener">Upwork Profile ↗</a>
-          <a class="btn btn-ghost" href="https://docs.google.com/document/d/10fFNt4RpHl9aQAj0WiDGFU3KDPpLIoPw/edit?usp=drivesdk&ouid=104501928473596697214&rtpof=true&sd=true" target="_blank" rel="noopener">CV ↗</a>
+          <a class="btn btn-ghost" href="./Moin_Tariq_CV.pdf" download="Moin_Tariq_CV.pdf">CV ↗</a>
         </div>
       </div>
     </section>
@@ -593,8 +613,12 @@
     // Mobile navigation
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    const closeMenu = () => { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); };
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
     // Typing effect
     const roles = [
@@ -665,15 +689,17 @@
         links: [['GitHub repository','https://github.com/moin-t/local_RAG_assistant']]
       },
       pygwml: {
-        kicker: 'Open Source', title: 'PyGWML',
-        copy: 'An open-source Python package published on PyPI for geographically weighted machine learning, supporting spatially aware modeling workflows for geospatial data.',
-        tech: ['Python','Geospatial ML','Spatial Modeling','PyPI'],
+        kicker: 'Open Source', title: 'PyEGWML',
+        copy: 'An open-source Python package published on PyPI for explainable geographically weighted machine learning and geospatial data modeling.',
+        tech: ['Python','Machine Learning','Spatial Modeling','PyPI'],
         links: [['View on PyPI','https://pypi.org/project/pyegwml/']]
       }
     };
     const modal = document.getElementById('projectModal');
-    const openProject = key => {
+    let lastProjectTrigger = null;
+    const openProject = (key, trigger) => {
       const p = projects[key]; if(!p) return;
+      lastProjectTrigger = trigger;
       document.getElementById('modalKicker').textContent = p.kicker;
       document.getElementById('modalTitle').textContent = p.title;
       document.getElementById('modalCopy').textContent = p.copy;
@@ -681,12 +707,13 @@
       document.getElementById('modalActions').innerHTML = p.links.map(([label,url]) => `<a class="btn btn-primary" href="${url}" target="_blank" rel="noopener">${label} ↗</a>`).join('');
       modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
       document.body.style.overflow='hidden';
+      document.getElementById('modalClose').focus();
     };
     document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => openProject(card.dataset.project));
-      card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') { e.preventDefault(); openProject(card.dataset.project); } });
+      card.addEventListener('click', () => openProject(card.dataset.project, card));
+      card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') { e.preventDefault(); openProject(card.dataset.project, card); } });
     });
-    const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
+    const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if(lastProjectTrigger?.focus) lastProjectTrigger.focus(); };
     document.getElementById('modalClose').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if(e.target===modal) closeModal(); });
     addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
